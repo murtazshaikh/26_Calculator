@@ -14,7 +14,7 @@ const display = val => document.getElementById("id1").value += val;
 
 const solve = () => {
     let x = document.getElementById("id1").value;
-    let y = eval(x);
+    let y = new Function(`return ${x}`)();
     if(y.toString().includes(".")) y = y.toFixed(2);
     document.getElementById("id1").value = y;
 }
